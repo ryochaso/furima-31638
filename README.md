@@ -52,8 +52,8 @@
 
 |Column          |Type       |Options                        |
 |----------------|-----------|-------------------------------|
-| postal_code    | string    | null: false                   |
-| prefecuture_id | integer   | null: false                   |
+| postal_code    | string    | null: false, foreign_key: true|
+| prefecuture_id | integer   | null: false, foreign_key: true|
 | city           | string    | null: false, foreign_key: true|
 | house_number   | string    | null: false, foreign_key: true|
 | buillding      | string    | foreign_key: true             |

@@ -34,12 +34,12 @@
 
 ### Association
 -belongs_to: user
--has_many: order
+-has_one: order
 
 ## ordersテーブル
 
-|Column |Type         |Options                         |
-|-------|-------------|--------------------------------|
+|Column |Type        |Options                         |
+|-------|------------|--------------------------------|
 | user  | references | null: false, foreign_key: true |
 | item  | references | null: false, foreign_key: true |
 
@@ -50,14 +50,15 @@
 
 ## addressesテーブル
 
-|Column          |Type       |Options      |
-|----------------|-----------|-------------|
-| postal_code    | integer   | null: false |
-| prefecuture_id | integer   | null: false |
-| city           | string    | null: false |
-| house_number   | string    | null: false |
-| buillding      | string    |             |
-| phone_number   | string    | null: false |
+|Column          |Type       |Options                        |
+|----------------|-----------|-------------------------------|
+| postal_code    | string    | null: false                   |
+| prefecuture_id | integer   | null: false                   |
+| city           | string    | null: false, foreign_key: true|
+| house_number   | string    | null: false, foreign_key: true|
+| buillding      | string    | foreign_key: true             |
+| phone_number   | string    | null: false, foreign_key: true|
 
 ### Association
--has_one: oder
+-belongs_to: order
+

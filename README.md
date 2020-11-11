@@ -20,17 +20,17 @@
 
 ## itemsテーブル
 
-|Column        |Type         |Options                         |
-|--------------|-------------|--------------------------------|
-| product      | string      | null: false                    |
-| explanation  | text        | null: false                    |
-| category     | string      | null: false                    |
-| condition    | string      | null: false                    |
-| postage      | integer     | null: false                    |
-| prefecture   | string      | null: false                    |
-| arrival_date | string      | null: false                    |
-| price        | integer     | null: false                    |
-| user         | referennces | null: false, foreign_key: true |
+|Column           |Type         |Options                         |
+|-----------------|-------------|--------------------------------|
+| name            | string      | null: false                    |
+| explanation     | text        | null: false                    |
+| category_id     | integer     | null: false                    |
+| condition_id    | integer     | null: false                    |
+| postage_id      | integer     | null: false                    |
+| prefecture_id   | integer     | null: false                    |
+| arrival_date_id | integer     | null: false                    |
+| price           | integer     | null: false                    |
+| user            | referennces | null: false, foreign_key: true |
 
 ### Association
 -belongs_to: user
@@ -50,14 +50,14 @@
 
 ## addressesテーブル
 
-|Column        |Type       |Options      |
-|--------------|-----------|-------------|
-| postal_code  | integer   | null: false |
-| prefecuture  | string    | null: false |
-| city         | string    | null: false |
-| house_number | string    | null: false |
-| buillding    | string    |             |
-| phone_number | string    | null: false |
+|Column         |Type       |Options      |
+|----------------|-----------|-------------|
+| postal_code    | integer   | null: false |
+| prefecuture_id | integer   | null: false |
+| city           | string    | null: false |
+| house_number   | string    | null: false |
+| buillding      | string    |             |
+| phone_number   | string    | null: false |
 
 ### Association
 -has_one: oder

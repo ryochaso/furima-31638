@@ -15,8 +15,8 @@
 
 
 ### Association
--has_manny: items
--has_manny: orders
+-has_many: items
+-has_many: orders
 
 ## itemsテーブル
 
@@ -30,27 +30,27 @@
 | prefecture_id   | integer     | null: false                    |
 | arrival_date_id | integer     | null: false                    |
 | price           | integer     | null: false                    |
-| user            | referennces | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 -belongs_to: user
--has_one: order
+-has_many: order
 
 ## ordersテーブル
 
 |Column |Type         |Options                         |
 |-------|-------------|--------------------------------|
-| user  | referennces | null: false, foreign_key: true |
-| item  | referennces | null: false, foreign_key: true |
+| user  | references | null: false, foreign_key: true |
+| item  | references | null: false, foreign_key: true |
 
 ### Association
 -belongs_to: user
--has_one: item
+-belongs_to: item
 -has_one: address
 
 ## addressesテーブル
 
-|Column         |Type       |Options      |
+|Column          |Type       |Options      |
 |----------------|-----------|-------------|
 | postal_code    | integer   | null: false |
 | prefecuture_id | integer   | null: false |

@@ -30,7 +30,7 @@
 | prefecture_id   | integer     | null: false                    |
 | arrival_date_id | integer     | null: false                    |
 | price           | integer     | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true  |
 
 ### Association
 -belongs_to: user
@@ -50,14 +50,15 @@
 
 ## addressesテーブル
 
-|Column          |Type       |Options                        |
-|----------------|-----------|-------------------------------|
-| postal_code    | string    | null: false, foreign_key: true|
-| prefecuture_id | integer   | null: false, foreign_key: true|
-| city           | string    | null: false, foreign_key: true|
-| house_number   | string    | null: false, foreign_key: true|
-| buillding      | string    | foreign_key: true             |
-| phone_number   | string    | null: false, foreign_key: true|
+|Column          |Type        |Options                        |
+|----------------|------------|-------------------------------|
+| postal_code    | string     | null: false,                  |
+| prefecuture_id | integer    | null: false,                  |
+| city           | string     | null: false,                  |
+| house_number   | string     | null: false,                  |
+| buillding      | string     | foreign_key:                  |
+| phone_number   | string     | null: false,                  |
+| order          | references | null: false, foreign_key: true|
 
 ### Association
 -belongs_to: order

@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
   #以下は異常系のテストコード
   context "ユーザー新規登録出来ない場合" do
     #ニックネームに関する項目
-    it "nicknameが空だと登録できない" do
+    it "nicknameが空だと登録できないこと" do
       @user.nickname = ""
       @user.valid?
       expect(@user.errors.full_messages).to include("Nickname can't be blank")
@@ -95,5 +95,3 @@ RSpec.describe User, type: :model do
       end
   end
 end
-
-  

@@ -30,7 +30,7 @@
 | prefecture_id   | integer     | null: false                    |
 | arrival_date_id | integer     | null: false                    |
 | price           | integer     | null: false                    |
-| user            | references | null: false, foreign_key: true  |
+| user            | references  | null: false, foreign_key: true |
 
 ### Association
 -belongs_to: user
@@ -56,7 +56,7 @@
 | prefecuture_id | integer    | null: false,                  |
 | city           | string     | null: false,                  |
 | house_number   | string     | null: false,                  |
-| buillding      | string     | foreign_key:                  |
+| buillding      | string     | null: false                   |
 | phone_number   | string     | null: false,                  |
 | order          | references | null: false, foreign_key: true|
 

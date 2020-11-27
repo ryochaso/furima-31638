@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :find_item
   before_action :move_to_top
+  before_action :authenticate_user!, only:[:index]
 
   def index
     if user_signed_in?

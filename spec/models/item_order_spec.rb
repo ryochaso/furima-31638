@@ -4,7 +4,6 @@ RSpec.describe ItemOrder, type: :model do
     @user = FactoryBot.create(:user) #フォームオブジェクトを用いているため先@user,@itemを作る必要がある
     @item = FactoryBot.create(:item)
     @item_order = FactoryBot.build(:item_order , user_id: @user.id, item_id: @item.id)
-    # @item_order = FactoryBot.build(:item_order)
     sleep(1)
   end
 
@@ -12,8 +11,6 @@ RSpec.describe ItemOrder, type: :model do
   context "商品が購入できるとき" do
   
     it "建物名がなくても購入できる" do
-      
-      
       @item_order.buillding = "" 
       expect(@item_order).to be_valid
     end
@@ -67,6 +64,11 @@ RSpec.describe ItemOrder, type: :model do
       @item_order.phone_number = "000-00-00000"
       @item_order.valid?
       expect(@item_order.errors.full_messages).to include("Phone number is not a number")
+    end
+    it "電話番号が12桁以上あるとき" do
+      @item_order.phone_number = "000000000000"
+      @item_order.valid?
+      expect(@item_order.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
     end
 
     #購入者および商品に関する項目

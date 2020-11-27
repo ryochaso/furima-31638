@@ -8,7 +8,7 @@ class ItemOrder
     validates :prefecture_id,         numericality: { only_integer: true}
     validates :city
     validates :house_number
-    validates :phone_number,          numericality: { only_integer: true }
+    validates :phone_number,          length: {maximum:11}, numericality: { only_integer: true, }
     validates :user_id
     validates :item_id
   end

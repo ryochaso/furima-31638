@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :find_item
-  before_action :authenticate_user!, only:[:index]
+  before_action :move_to_top
 
   def index
     if user_signed_in?
@@ -43,5 +43,10 @@ class OrdersController < ApplicationController
       )
   end
 
+  def move_to_top
+    unless @item.order == nil
+      redirect_to root_path
+    end
+  end
 
 end
